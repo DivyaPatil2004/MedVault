@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: medvault-db
+    environment:
+      POSTGRES_DB: medvault
+      POSTGRES_USER: medvault_user
+      POSTGRES_PASSWORD: medvault_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - medvault_pgdata:/var/lib/postgresql/data
+
+volumes:
+  medvault_pgdata:
